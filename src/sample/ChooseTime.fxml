@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/black-hd-wallpaper_594969403.jpg" />
+                  <Image url="@../../Resources/images/black-hd-wallpaper_594969403.jpg" />
                </image>
             </ImageView>
             <Line endX="-100.0" endY="515.0" layoutX="341.0" layoutY="205.0" startX="-100.0" startY="-205.0" stroke="#52b520" />
@@ -24,12 +24,12 @@
             <Line endX="1178.0" layoutX="101.0" layoutY="524.0" startX="-100.0" stroke="#52b520" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/logo_imax.png" />
+                  <Image url="@../../Resources/images/logo_imax.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/4dx-img.jpg" />
+                  <Image url="@../../Resources/images/4dx-img.jpg" />
                </image>
             </ImageView>
             <Label layoutX="54.0" layoutY="104.0" text="Theater 1" textFill="WHITE">
@@ -54,22 +54,22 @@
             </Label>
             <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="289.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/lang-en.png" />
+                  <Image url="@../../Resources/images/lang-en.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="289.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/lang-en.png" />
+                  <Image url="@../../Resources/images/lang-en.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="289.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/lang-en.png" />
+                  <Image url="@../../Resources/images/lang-en.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="38.0" layoutX="289.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/th-icon-12.jpg" />
+                  <Image url="@../../Resources/images/th-icon-12.jpg" />
                </image>
             </ImageView>
             <Button fx:id="Th1" layoutX="260.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleGoTh1OnAction" prefHeight="51.0" prefWidth="135.0" text="00.00">
@@ -99,7 +99,7 @@
             </Button>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/4dx-img.jpg" />
+                  <Image url="@../../Resources/images/4dx-img.jpg" />
                </image>
             </ImageView>
          </children>
