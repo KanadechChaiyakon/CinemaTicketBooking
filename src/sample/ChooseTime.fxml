@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseTime">
+   <children>
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/black-hd-wallpaper_594969403.jpg" />
+               </image>
+            </ImageView>
+            <Line endX="-100.0" endY="515.0" layoutX="341.0" layoutY="205.0" startX="-100.0" startY="-205.0" stroke="#52b520" />
+            <Line endX="1178.0" layoutX="102.0" layoutY="103.0" startX="-100.0" stroke="#52b520" />
+            <Line endX="1178.0" layoutX="101.0" layoutY="243.0" startX="-100.0" stroke="#52b520" />
+            <Line endX="1178.0" layoutX="101.0" layoutY="382.0" startX="-100.0" stroke="#52b520" />
+            <Line endX="1178.0" layoutX="101.0" layoutY="524.0" startX="-100.0" stroke="#52b520" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo_imax.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/4dx-img.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="54.0" layoutY="104.0" text="Theater 1" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="243.0" text="Theater 2" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="382.0" text="Theater 3" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="525.0" text="Theater 4" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="289.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/lang-en.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="289.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/lang-en.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="289.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/lang-en.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="38.0" layoutX="289.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/th-icon-12.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="Th1" layoutX="260.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleGoTh1OnAction" prefHeight="51.0" prefWidth="135.0" text="00.00">
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="Th2" layoutX="260.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleGoTh2OnAction" prefHeight="51.0" prefWidth="135.0" text="00.00">
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="Th3" layoutX="260.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleGoTh3OnAction" prefHeight="51.0" prefWidth="135.0" text="00.00">
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="Th4" layoutX="260.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleGoTh4OnAction" prefHeight="51.0" prefWidth="135.0" text="00.00">
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="Back" layoutX="54.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleGoBackOnAction" prefHeight="51.0" prefWidth="135.0" text="Back">
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/4dx-img.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
