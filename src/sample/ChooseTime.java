@@ -6,26 +6,45 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class ChooseTime {
 
-    @FXML
-    private Button Back;
+    private Loginuser user;
+    private String username;
+    private String name;
+    private String movie;
 
     @FXML
-    private Button Th1;
+    private Button Th1, Th2, Th3, Th4, Back;
 
     @FXML
-    private Button Th2;
+    private Label description;
 
     @FXML
-    private Button Th3;
-
-    @FXML
-    private Button Th4;
+    public void initialize(){
+        try {
+            FileReader fileReader = new FileReader("CurrentUser.csv");
+            BufferedReader reader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = reader.readLine()) != null){
+                String[] data = line.split(",");
+                name = data[0];
+                username = data[1];
+                movie = data[2];
+            }
+        }
+        catch (IOException x){
+            System.err.println(x.getMessage());
+        }
+    }
 
     @FXML
     public void handleGoTh1OnAction(ActionEvent event) throws IOException {
