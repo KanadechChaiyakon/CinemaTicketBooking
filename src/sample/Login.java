@@ -18,7 +18,7 @@ public class Login {
     private ArrayList<Userdata> userdata;
 
     @FXML
-    private Button loginbtn, registerbtn;
+    private Button loginbtn, registerbtn, profile;
 
     @FXML
     private TextField username, password;
@@ -107,6 +107,14 @@ public class Login {
         Parent loader = FXMLLoader.load(getClass().getResource("Register.fxml"));
         Scene scene = new Scene(loader);
         Stage stage = (Stage) registerbtn.getScene().getWindow();
+        stage.setScene(scene);
+    }
+
+    @FXML
+    public void handleGoProfileOnAction(ActionEvent event) throws IOException {
+        Parent loader = FXMLLoader.load(getClass().getResource("profile.fxml"));
+        Scene scene = new Scene(loader);
+        Stage stage = (Stage) profile.getScene().getWindow();
         stage.setScene(scene);
     }
 }

@@ -42,5 +42,6 @@
             <Font name="Courier New" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="profile" layoutX="510.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleGoProfileOnAction" prefHeight="32.0" prefWidth="76.0" text="Profile" />
    </children>
 </AnchorPane>
