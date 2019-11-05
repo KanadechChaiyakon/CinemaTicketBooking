@@ -88,7 +88,7 @@ public class ChooseTime {
         try {
             FileWriter fileWriter = new FileWriter("CurrentUser.csv");
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            writer.write(name+","+username+","+movie+","+theater);
+            writer.write(name+","+username+","+movie+","+theater+","+Th1.getText());
             writer.newLine();
             writer.flush();
             if(writer != null){
