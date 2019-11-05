@@ -35,7 +35,7 @@ public class Controller {
                 String[] data = line.split(",");
                 this.name = data[0];
                 this.username = data[1];
-                showusername.setText(data[1]);
+                this.showusername.setText(data[1]);
             }
         }
         catch (IOException x){
@@ -43,12 +43,16 @@ public class Controller {
         }
     }
 
-    @FXML
     public void Selectmovie(String movie){
         try{
-            FileWriter fileWriter = new FileWriter("Currentuser.csv");
+            FileWriter fileWriter = new FileWriter("CurrentUser.csv");
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            writer.write(name+","+username+","+movie);
+            writer.write(this.name+","+this.username+","+movie);
+            writer.newLine();
+            writer.flush();
+            if(writer != null){
+                writer.close();
+            }
         }
         catch (IOException x){
             System.err.println(x.getMessage());
@@ -66,37 +70,37 @@ public class Controller {
 
     @FXML
     public void handleGobuy1OnAction(ActionEvent event) throws IOException {
+        Selectmovie("Antman2");
         Parent loader = FXMLLoader.load(getClass().getResource("ChooseTime.fxml"));
         Scene scene = new Scene(loader);
         Stage stage = (Stage) buy1.getScene().getWindow();
-        Selectmovie("Antman and The Wasp");
         stage.setScene(scene);
     }
 
     @FXML
     public void handleGobuy2OnAction(ActionEvent event) throws IOException {
+        Selectmovie("PointBreak");
         Parent loader = FXMLLoader.load(getClass().getResource("ChooseTime.fxml"));
         Scene scene = new Scene(loader);
         Stage stage = (Stage) buy2.getScene().getWindow();
-        Selectmovie("PointBreak");
         stage.setScene(scene);
     }
 
     @FXML
     public void handleGobuy3OnAction(ActionEvent event) throws IOException {
+        Selectmovie("MissionImpossible");
         Parent loader = FXMLLoader.load(getClass().getResource("ChooseTime.fxml"));
         Scene scene = new Scene(loader);
         Stage stage = (Stage) buy3.getScene().getWindow();
-        Selectmovie("Mission Impossible:Fallout");
         stage.setScene(scene);
     }
 
     @FXML
     public void handleGobuy4OnAction(ActionEvent event) throws IOException {
+        Selectmovie("BeginAgain");
         Parent loader = FXMLLoader.load(getClass().getResource("ChooseTime.fxml"));
         Scene scene = new Scene(loader);
         Stage stage = (Stage) buy4.getScene().getWindow();
-        Selectmovie("Begin Again");
         stage.setScene(scene);
     }
 

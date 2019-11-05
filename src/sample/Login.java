@@ -88,7 +88,8 @@ public class Login {
                                 System.err.println(x.getMessage());
                             }
                             stage.setScene(scene);
-                        } else {
+                        }
+                        else if (!password.getText().equals(data[3])){
                             this.incorrrectpassword.setOpacity(1);
                         }
                     }
