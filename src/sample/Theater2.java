@@ -6,14 +6,90 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Theater2 {
 
+    private String name;
+    private String username;
+    private String movie;
+    private String theater;
+    private String time;
+
     @FXML
-    private Button Back;
+    private Button Back,Confirm,Cancle;
+
+    @FXML
+    private Label total;
+
+    @FXML
+    private Button a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18;
+
+    @FXML
+    private Button[] buttons = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18};
+
+    @FXML
+    private Button[] normal = {c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18};
+
+    @FXML
+    private Button[] vip = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14};
+
+    @FXML
+    private Button[] honeymoon = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10};
+
+    @FXML
+    public void initialize(){
+        File file = new File("BookingData.csv");
+        try{
+            FileReader fileReader = new FileReader("CurrentUser.csv");
+            BufferedReader reader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = reader.readLine()) != null){
+                String[] data = line.split(",");
+                this.name = data[0];
+                this.username = data[1];
+                this.movie = data[2];
+                this.theater = data[3];
+                this.time = data[4];
+            }
+        }
+        catch (IOException x){
+            System.err.println(x.getMessage());
+        }
+        try {
+            Button[] normal = {c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18};
+            Button[] vip = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14};
+            Button[] honeymoon = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10};
+            for(int i =0; i<10; i++){
+                honeymoon[i].setStyle("-fx-background-image: url('/images/Honeymoon.png')");
+            }
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileReader fileReader = new FileReader("BookingData.csv");
+            BufferedReader reader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = reader.readLine()) != null){
+                String[] data = line.split(",");
+                String moviecheck = data[2];
+                String theatercheck = data[3];
+                String bookedchairid = data[5];
+                if(moviecheck.equals(movie) && theatercheck.equals(theater)){
+
+                }
+            }
+        }
+        catch (IOException x){
+            System.err.println(x.getMessage());
+        }
+
+    }
 
     @FXML
     public void handleGoBackOnAction(ActionEvent event) throws IOException {
