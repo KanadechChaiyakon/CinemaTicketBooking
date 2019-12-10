@@ -10,10 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Theater1 {
@@ -34,22 +31,12 @@ public class Theater1 {
     private Label total;
 
     @FXML
-    private ImageView a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14;
+    private Button a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14;
 
-    @FXML
-    private Button a1btn,a2btn,a3btn,a4btn,a5btn,a6btn,a7btn,a8btn,a9btn,a10btn,a11btn,a12btn,a13btn,a14btn,b1btn,b2btn,b3btn,b4btn,b5btn,b6btn,b7btn,b8btn,b9btn,b10btn,b11btn,b12btn,b13btn,b14btn,c1btn,c2btn,c3btn,c4btn,c5btn,c6btn,c7btn,c8btn,c9btn,c10btn,c11btn,c12btn,c13btn,c14btn,d1btn,d2btn,d3btn,d4btn,d5btn,d6btn,d7btn,d8btn,d9btn,d10btn,d11btn,d12btn,d13btn,d14btn;
-
-    @FXML
-    final Button[] vip = {b1btn,b2btn,b3btn,b4btn,b5btn,b6btn,b7btn,b8btn,b9btn,b10btn,b11btn,b12btn,b13btn,b14btn};
-
-    @FXML
-    final Button[] normal = {c1btn,c2btn,c3btn,c4btn,c5btn,c6btn,c7btn,c8btn,c9btn,c10btn,c11btn,c12btn,c13btn,c14btn,d1btn,d2btn,d3btn,d4btn,d5btn,d6btn,d7btn,d8btn,d9btn,d10btn,d11btn,d12btn,d13btn,d14btn};
-
-    @FXML
-    final Button[] honeymoon ={a1btn,a2btn,a3btn,a4btn,a5btn,a6btn,a7btn,a8btn,a9btn,a10btn,a11btn,a12btn,a13btn,a14btn};
-
-    @FXML
-    private ImageView[] imageViews = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14};
+    public Theater1(){
+        this.totalmoney = 0;
+        this.chairclick = new ArrayList<String>();
+    }
 
     @FXML
     public void initialize(){
@@ -66,16 +53,25 @@ public class Theater1 {
                 this.theater = data[3];
                 this.time = data[4];
             }
-            d1btn.setOpacity(1);
-            d1btn.setStyle("-fx-background-image: url('/images/Normal.png')");
         }
         catch (IOException x){
             System.err.println(x.getMessage());
         }
         try {
-            Button[] vip = {b1btn,b2btn,b3btn,b4btn,b5btn,b6btn,b7btn,b8btn,b9btn,b10btn,b11btn,b12btn,b13btn,b14btn};
-            Button[] normal = {c1btn,c2btn,c3btn,c4btn,c5btn,c6btn,c7btn,c8btn,c9btn,c10btn,c11btn,c12btn,c13btn,c14btn,d1btn,d2btn,d3btn,d4btn,d5btn,d6btn,d7btn,d8btn,d9btn,d10btn,d11btn,d12btn,d13btn,d14btn};
-            Button[] honeymoon ={a1btn,a2btn,a3btn,a4btn,a5btn,a6btn,a7btn,a8btn,a9btn,a10btn,a11btn,a12btn,a13btn,a14btn};
+            Button[] vip = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14};
+            Button[] normal = {c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14};
+            Button[] honeymoon ={a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14};
+
+            for(int i = 0; i<28; i++){
+                normal[i].setStyle("-fx-background-image: url('/images/Normal.png')");
+            }
+            for(int i = 0; i<14; i++){
+                vip[i].setStyle("-fx-background-image: url('/images/VIP.png')");
+            }
+            for(int i = 0; i<14; i++){
+                honeymoon[i].setStyle("-fx-background-image: url('/images/Honeymoon.png')");
+            }
+
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -120,45 +116,116 @@ public class Theater1 {
 
     @FXML
     public void handleClickChairOnAction(ActionEvent event) throws IOException{
+        Button[] vip = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14};
+        Button[] normal = {c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14};
+        Button[] honeymoon ={a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14};
         Button x = (Button)event.getSource();
-        if(x.getStyle() == null ){
-            x.setStyle("-fx-background-image: url('/images/click.png')");
-            chairclick.add(x.getText());
+        if(x.getStyle() == "-fx-background-image: url('/images/Normal.png')" || x.getStyle() == "-fx-background-image: url('/images/VIP.png')" || x.getStyle() == "-fx-background-image: url('/images/Honeymoon.png')" ){
             for(int i =0; i<28; i++){
-                if(x.getText().equals(normal[i].getText()))
+                if(x.getId().equals(normal[i].getId())){
+                    x.setStyle("-fx-background-image: url('/images/NormalClick.png')");
                     totalmoney += 120;
+                }
             }
             for(int i =0; i<14; i++){
-                if(x.getText().equals(vip[i].getText()))
+                if(x.getId().equals(vip[i].getId())){
+                    x.setStyle("-fx-background-image: url('/images/VIPClick.png')");
                     totalmoney += 200;
+                }
             }
-            for(int i =0; i<28; i++){
-                if(x.getText().equals(honeymoon[i].getText()))
+            for(int i =0; i<14; i++){
+                if(x.getId().equals(honeymoon[i].getId())){
+                    x.setStyle("-fx-background-image: url('/images/HoneymoonClick.png')");
                     totalmoney += 300;
+                }
             }
             chairclick.add(x.getId());
             total.setText("Total "+chairclick.size()+" Ticket Amount: "+totalmoney+" baht");
         }
-        else if(x.getStyle() == "-fx-background-image: url('/images/click.png')" ){
-            x.setOpacity(0);
-            x.setStyle(null);
-            chairclick.remove(x.getText());
+        else if(x.getStyle() == "-fx-background-image: url('/images/NormalClick.png')" || x.getStyle() == "-fx-background-image: url('/images/VIPClick.png')" || x.getStyle() == "-fx-background-image: url('/images/HoneymoonClick.png')" ){
             for(int i =0; i<28; i++){
-                if(x.getText().equals(normal[i].getText()))
+                if(x.getId().equals(normal[i].getId())){
                     totalmoney -= 120;
+                    x.setStyle("-fx-background-image: url('/images/Normal.png')");
+                }
             }
             for(int i =0; i<14; i++){
-                if(x.getText().equals(vip[i].getText()))
+                if(x.getId().equals(vip[i].getId())){
                     totalmoney -= 200;
+                    x.setStyle("-fx-background-image: url('/images/VIP.png')");
+                }
             }
-            for(int i =0; i<28; i++){
-                if(x.getText().equals(honeymoon[i].getText()))
+            for(int i =0; i<14; i++){
+                if(x.getId().equals(honeymoon[i].getId())){
                     totalmoney -= 300;
+                    x.setStyle("-fx-background-image: url('/images/Honeymoon.png')");
+                }
             }
             chairclick.remove(x.getId());
             total.setText("Total "+chairclick.size()+" Ticket Amount: "+totalmoney+" baht");
         }
 
+    }
+
+    @FXML
+    public void handleConfirmOnAction(ActionEvent event) throws IOException{
+        Button[] chair = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14};
+        try{
+            FileWriter fileWriter = new FileWriter("BookingData.csv",true);
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            for(int i = 0; i<chairclick.size(); i++){
+                for(int j =0; j<56; j++){
+                    if(chairclick.get(i).equals(chair[j].getId())){
+                        chair[j].setStyle("-fx-background-image: url('/images/BookedChairs.png')");
+                        chair[i].setOpacity(1);
+                        chair[i].setDisable(true);
+                    }
+                }
+                writer.write(name+","+username+","+movie+","+theater+","+time+","+chairclick.get(i));
+                writer.newLine();
+                writer.flush();
+            }
+            if(writer != null){
+                writer.close();
+            }
+        }
+        catch (IOException x){
+            System.err.println(x.getMessage());
+        }
+        chairclick.clear();
+        totalmoney = 0;
+        total.setText("Total "+chairclick.size()+" Ticket Amount: "+totalmoney+" baht");
+
+    }
+
+    @FXML
+    public void handleCancleOnAction(ActionEvent event) throws IOException{
+        Button[] chair = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14};
+        Button[] vip = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14};
+        Button[] normal = {c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14};
+        Button[] honeymoon ={a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14};
+        for(int i = 0; i<56 ; i++){
+            if(chair[i].getStyle() == "-fx-background-image: url('/images/NormalClick.png')" || chair[i].getStyle() == "-fx-background-image: url('/images/VIPClick.png')" || chair[i].getStyle() == "-fx-background-image: url('/images/HoneymoonClick.png')" ){
+                for(int j =0; j<28; j++){
+                    if(chair[i].getId().equals(normal[j].getId())){
+                        chair[i].setStyle("-fx-background-image: url('/images/Normal.png')");
+                    }
+                }
+                for(int j =0; j<14; j++){
+                    if(chair[i].getId().equals(vip[j].getId())){
+                        chair[i].setStyle("-fx-background-image: url('/images/VIP.png')");
+                    }
+                }
+                for(int j = 0; j<14; j++){
+                    if(chair[i].getId().equals(honeymoon[j].getId())){
+                        chair[i].setStyle("-fx-background-image: url('/images/Honeymoon.png')");
+                    }
+                }
+            }
+        }
+        chairclick.clear();
+        totalmoney = 0;
+        total.setText("Total "+chairclick.size()+" Ticket Amount: "+totalmoney+" baht");
     }
 
     @FXML

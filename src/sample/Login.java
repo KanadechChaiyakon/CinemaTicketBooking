@@ -71,9 +71,6 @@ public class Login {
                     if (username.getText().equals(data[2])) {
                         if (password.getText().equals(data[3])) {
                             Userdata loginuser = new Userdata(data[0],data[1],data[2],data[3]);
-                            Parent loader = FXMLLoader.load(getClass().getResource("sample.fxml"));
-                            Scene scene = new Scene(loader);
-                            Stage stage = (Stage) loginbtn.getScene().getWindow();
                             try {
                                 FileWriter fileWriter = new FileWriter("CurrentUser.csv");
                                 BufferedWriter writer = new BufferedWriter(fileWriter);
@@ -87,6 +84,9 @@ public class Login {
                             catch (IOException x){
                                 System.err.println(x.getMessage());
                             }
+                            Parent loader = FXMLLoader.load(getClass().getResource("sample.fxml"));
+                            Scene scene = new Scene(loader);
+                            Stage stage = (Stage) loginbtn.getScene().getWindow();
                             stage.setScene(scene);
                         }
                         else if (!password.getText().equals(data[3])){
