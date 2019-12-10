@@ -81,21 +81,21 @@ public class Theater2 {
                 String bookedchairid = data[5];
                 if(moviecheck.equals(movie) && theatercheck.equals(theater)){
                     for(int i = 0; i<72; i++){
-                        if(bookedchairid.equals(normal[i].getText())){
+                        if(bookedchairid.equals(normal[i].getId())){
                             normal[i].setStyle("-fx-background-image: url('/images/BookedChairs.png')");
                             normal[i].setOpacity(1);
                             normal[i].setDisable(true);
                         }
                     }
                     for(int i = 0; i<14; i++){
-                        if(bookedchairid.equals(vip[i].getText())){
+                        if(bookedchairid.equals(vip[i].getId())){
                             vip[i].setStyle("-fx-background-image: url('/images/BookedChairs.png')");
                             vip[i].setOpacity(1);
                             vip[i].setDisable(true);
                         }
                     }
                     for(int i = 0; i<10; i++){
-                        if(bookedchairid.equals(honeymoon[i].getText())){
+                        if(bookedchairid.equals(honeymoon[i].getId())){
                             honeymoon[i].setStyle("-fx-background-image: url('/images/BookedChairs.png')");
                             honeymoon[i].setOpacity(1);
                             honeymoon[i].setDisable(true);

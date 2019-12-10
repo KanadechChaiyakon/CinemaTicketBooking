@@ -73,7 +73,7 @@ public class Theater4 {
                 String bookedchairid = data[5];
                 if(moviecheck.equals(movie) && theatercheck.equals(theater)){
                     for(int i = 0; i<96; i++){
-                        if(bookedchairid.equals(normal[i].getText())){
+                        if(bookedchairid.equals(normal[i].getId())){
                             normal[i].setStyle("-fx-background-image: url('/images/BookedChairs.png')");
                             normal[i].setOpacity(1);
                             normal[i].setDisable(true);
