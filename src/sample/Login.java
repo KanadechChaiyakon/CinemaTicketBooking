@@ -24,7 +24,7 @@ public class Login {
     private TextField username, password;
 
     @FXML
-    private Label noregist, incorrrectpassword, noinput;
+    private Label noregist, incorrectpassword, noinput;
 
     public void initialize(){
         File file = new File("Userdata.csv");
@@ -56,7 +56,11 @@ public class Login {
 
     public void handleGoLoginOnAction(ActionEvent event) throws IOException{
 
-        this.noinput.setOpacity(0);
+        boolean checkpassword = true;
+
+        noregist.setOpacity(0);
+        noinput.setOpacity(0);
+        incorrectpassword.setOpacity(0);
 
         if(username.getText().equals("") || password.getText().equals("")){
             noinput.setOpacity(1);
@@ -90,11 +94,13 @@ public class Login {
                             stage.setScene(scene);
                         }
                         else if (!password.getText().equals(data[3])){
-                            this.incorrrectpassword.setOpacity(1);
+                            checkpassword = false;
+                            incorrectpassword.setOpacity(1);
                         }
                     }
                 }
-                noregist.setOpacity(1);
+                if (checkpassword)
+                    noregist.setOpacity(1);
             } catch (IOException x) {
                 System.err.println(x.getMessage());
             }
