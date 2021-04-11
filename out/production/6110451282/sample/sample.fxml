@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <GridPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="723.0" fitWidth="1281.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/60254-light-red-cinema-movie-film-1920x1080.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="logout" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogoutOnAction" prefHeight="58.0" prefWidth="147.0" text="Logout">
+               <font>
+                  <Font name="Courier New" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="869.0" layoutY="22.0" text="welcome ">
+               <font>
+                  <Font name="Courier New" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="showusername" layoutX="1042.0" layoutY="22.0" prefHeight="43.0" prefWidth="230.0" text="username">
+               <font>
+                  <Font name="Courier New" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="279.0" fitWidth="230.0" layoutX="88.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/A1CGAvzql5L._SY606_.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="279.0" fitWidth="230.0" layoutX="387.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Point_Break-992769690-large.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="279.0" fitWidth="230.0" layoutX="710.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/A1M0qlxNo6L._SY679_.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="279.0" fitWidth="230.0" layoutX="1007.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/MV5BNjAxMTI4MTgzMV5BMl5BanBnXkFtZTgwOTAwODEwMjE@._V1_.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="200.0" layoutX="94.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/buy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="200.0" layoutX="393.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/buy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="200.0" layoutX="716.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/buy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="200.0" layoutX="1013.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/buy.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buy1" layoutX="95.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleGobuy1OnAction" opacity="0.0" prefHeight="43.0" prefWidth="182.0" text="Button" />
+            <Button fx:id="buy2" layoutX="394.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleGobuy2OnAction" opacity="0.0" prefHeight="43.0" prefWidth="182.0" text="Button" />
+            <Button fx:id="buy3" layoutX="717.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleGobuy3OnAction" opacity="0.0" prefHeight="43.0" prefWidth="182.0" text="Button" />
+            <Button fx:id="buy4" layoutX="1013.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleGobuy4OnAction" opacity="0.0" prefHeight="43.0" prefWidth="182.0" text="Button" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

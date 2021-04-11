@@ -106,7 +106,12 @@ public class Register {
             stage.setScene(scene);
         }
 
+
+
+
     }
+
+
 }
 
 
